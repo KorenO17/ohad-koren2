@@ -1,15 +1,4 @@
 const todoFuncs = {
-    //     "column-name": "title",
-    //     "type": "VARCHAR(255)"
-    // },
-    // {
-    //     "column-name": "userId",
-    //     "type": "INT"
-    // },
-    // {
-    //     "column-name": "completed",
-    //     "type": "BOOLEAN"
-    // }
     getFunc: (req) => {
         let sql
         if (req.query === {}) {
@@ -19,7 +8,7 @@ const todoFuncs = {
             sql = `SELECT * FROM todos WHERE 1=1 AND `
             for (let key in req.query) {
                 if (!req.query[key].includes("'") && req.query[key].length > 0) {
-                    if (key === "title" || key === "userId") {
+                    if (key === "title" || key === "userId"|| key === "id") {
                         sql += `${key}='${req.query[key]}' AND `
                     }
                 }
