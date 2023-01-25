@@ -3,25 +3,28 @@ const mysql = require("mysql");
 const router = express.Router();
 const postActions = require("../../database/PostsAction");
 
-const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "z10mz10m",
-  database: "sql_proj",
+router.get("/", function (req, res, next) {
+  let myQuery;
+  JSON.stringify(req.query) !== "{}"
+    ? (myQuery = req.query)
+    : (myQuery = false);
+  console.log(req.query);
+  postActions.getPosts((data) => {
+    res.json(data);
+  }, myQuery);
 });
 
-con.connect(function (err) {
-  if (err) throw err;
-/////OPENS CONNECTION/////////////
-
-  router.get("/", function (req, res, next) {
-    Object.keys(req.query).length === 0 ? console.log('yes') : console.log('nop');
-    // postActions.getPosts(con, req.query);
-    res.json("ohaddd");
-  });
-
-///// CLOSES CONNECTION/////////////
+router.post("/", function (req, res, next) {
+  postActions.postPosts(req.body, (data) => res.send(data));
 });
-/* GET users listing. */
+
+router.put("/", function (req, res, next) {
+  postActions.putPosts(req.body, (data) => res.send(data));
+});
+
+router.delete("/", function (req, res, next) {
+  console.log("req.params.id: ", req.query);
+  postActions.deletePost(parseInt(req.query.id), (data) => res.send(data));
+});
 
 module.exports = router;
