@@ -15,15 +15,17 @@ con.connect(function (err) {
   router.get('/', function (req, res) {
     let sql
     if (req.query === {}) {
-      sql = 'SELECT * FROM users'
+      sql = 'SELECT * FROM users where '
     }
     else {
-      sql=`SELECT * FROM users WHERE `
-      for(let key in req.query) {
-        sql+=`IF(EXISTS(SELECT 1 FROM information_schema.COLUMNS WHERE TABLE_NAME = 'users' AND COLUMN_NAME = '${key}'), ${key}='${req.query[key]}',1=1) AND `
+      sql = `SELECT * FROM users WHERE 1=1 AND `
+      for (let key in req.query) {
+        if (key === "email" || key === "username" || key === "name" || key === "id") {
+          sql += `${key}='${req.query[key]}' AND `
+        }
       }
-      sql=sql.slice(0,sql.length-5);
-      console.log(sql);
+      sql = sql.slice(0, sql.length - 5);
+      
     }
     con.query(sql, function (err, result) {
       if (err) throw err;
