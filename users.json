@@ -1,0 +1,25 @@
+{
+    "table":"users",
+    "columns":[
+        {
+            "column-name":"id",
+            "type": "INT",
+            "special-attribute": "PRIMARY KEY auto_increment"
+        },
+        {
+            "column-name":"name",
+            "type": "VARCHAR(255)"
+        },
+        {
+            "column-name":"username",
+            "type": "VARCHAR(255)",
+            "special-attribute": "UNIQUE"
+        },
+        {
+            "column-name":"email",
+            "type": "VARCHAR(255)",
+            "special-attribute": "UNIQUE"
+        }
+    ]
+}
+

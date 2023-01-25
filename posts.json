@@ -1,0 +1,22 @@
+{
+    "table": "posts",
+    "columns": [
+        {
+            "column-name": "id",
+            "type": "INT",
+            "special-attribute": "PRIMARY KEY auto_increment"
+        },
+        {
+            "column-name": "title",
+            "type": "VARCHAR(255)"
+        },
+        {
+            "column-name": "userId",
+            "type": "INT"
+        },
+        {
+            "column-name": "body",
+            "type": "VARCHAR(255)"
+        }
+    ]
+}

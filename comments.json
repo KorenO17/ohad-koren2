@@ -1,0 +1,26 @@
+{
+    "table": "comments",
+    "columns": [
+        {
+            "column-name": "id",
+            "type": "INT",
+            "special-attribute": "PRIMARY KEY auto_increment"
+        },
+        {
+            "column-name": "postId",
+            "type": "INT"
+        },
+        {
+            "column-name": "name",
+            "type": "VARCHAR(255)"
+        },
+        {
+            "column-name": "email",
+            "type": "VARCHAR(255)"
+        },
+        {
+            "column-name": "body",
+            "type": "VARCHAR(255)"
+        }
+    ]
+}
