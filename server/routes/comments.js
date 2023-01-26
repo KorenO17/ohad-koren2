@@ -2,8 +2,7 @@ const e = require('express');
 var express = require('express');
 var mysql = require('mysql');
 var router = express.Router();
-var commentFunc = require('/home/hilma/Desktop/projects/database/ohad&koren (copy)/database/functions/commentFuncs.js')
-
+var commentFunc = require('../../database/functions/commentFuncs');
 const con = mysql.createConnection({
   host: "localhost",
   user: "root",
