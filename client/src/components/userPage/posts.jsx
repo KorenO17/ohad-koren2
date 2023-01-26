@@ -99,6 +99,7 @@ function Info() {
           style={post.marked ? { background: "rgb(137, 190, 233)" } : null}
         >
           <h4>{post.title}</h4>
+          <p>{post.body}</p>
           <div className="postButtons">
             <button onClick={() => markUnmark(i)}>Mark</button>
             <button>Delete Post</button>
