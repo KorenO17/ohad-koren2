@@ -2,7 +2,7 @@ const e = require('express');
 var express = require('express');
 var mysql = require('mysql');
 var router = express.Router();
-var todoFunc = require('/home/hilma/Desktop/projects/database/ohad&koren (copy)/database/functions/todoFuncs.js')
+var todoFunc = require('../../database/functions/todoFuncs')
 
 const con = mysql.createConnection({
   host: "localhost",

@@ -2,7 +2,7 @@ const e = require('express');
 var express = require('express');
 var mysql = require('mysql');
 var router = express.Router();
-var userFunc = require('/home/hilma/Desktop/projects/database/ohad&koren (copy)/database/functions/userFuncs.js')
+var userFunc = require('../../database/functions/userFuncs')
 
 const con = mysql.createConnection({
   host: "localhost",
