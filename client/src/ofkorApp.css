@@ -1,0 +1,187 @@
+@import url('https://fonts.cdnfonts.com/css/my-childish-font');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'arial';
+   
+   
+}
+a:link,a:visited{
+    color: white;
+    text-decoration-line: none;
+     font-size: 1vw;
+}
+a:hover{
+    color: red;
+ -webkit-text-stroke: 7px solid red;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    /* background-color: rgb(216, 144, 20); */
+    background-image: url("https://img.freepik.com/free-vector/abstract-organic-lines-background_1017-26669.jpg");
+}
+nav div>a:link,
+nav div>a:visited{
+    /* background-color: yellow; */
+    color: white;
+    text-decoration-line: none;
+    position: absolute;
+    bottom: 5%;
+}
+nav #logOut{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    bottom: 0;
+    border-bottom: none;
+}
+nav div{
+    height: 5%;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid wheat;
+}
+header{
+    background-image:linear-gradient(20deg, rgb(88, 88, 212), red);
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 20vh;
+    z-index: 2;  
+}
+.post{
+    position: relative;
+    width: 100%;
+    margin-bottom: 5%;
+    background-color: antiquewhite;
+    /* background-color: rgb(137, 190, 233); */
+    border: 2px ridge black;
+}
+.post h4{
+    margin-bottom: 3%;
+    text-decoration-line: underline;
+}
+.postButtons{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#logo{
+    height: 100%;
+    width:20%;
+    position: relative;
+}
+#logo img{
+    position: absolute;
+    height: 80%;
+    width: 60%;
+    top: calc(50% - 40%);
+    right: calc(50% - 30%);
+}
+#title{
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 80%;
+}
+#title h1{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-size: 10vmin;
+  
+}
+nav{
+    background-image:linear-gradient(20deg,red, rgb(88, 88, 212));
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 20vh;
+    left: 0;
+    width: 10vw;
+    height: 80vh;
+}
+.album{
+    padding-left: 1%;
+    width: 17%;
+    height: 40%;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bf/LeBron_James_-_51959723161_%28cropped%29.jpg");
+    background-size: cover;
+}
+#hi{
+    position: absolute;
+    top: 21%;
+    left: 11%;
+
+}
+#Albums{
+    width:100%;
+    height:60%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.currentContent{
+    font-size: 1rem;
+    color: none;
+    position: absolute;
+    z-index: 0;
+    top: 27vh;
+    left: 14vw;
+    width: 80vw;
+    height: 73vh;
+}
+
+
+
+
+
+form > h3{
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+form{
+    
+    color: rgba(255, 255,255 , 0.7);
+    -webkit-text-stroke: 0.2px black;
+    font-weight: bold;
+    background-color: rgba(179, 83, 155,0.5);
+    width: 25%;
+    height: 30%;
+    position: absolute;
+    top:40%;
+    right:calc(50% - 12.5%);
+    border: 1px solid black;
+   
+}
+label{
+    display: block;
+    margin-left: 29%;
+}
+.logInput{
+    margin-left: 25%;
+    width: 50%;
+    height: 30px;
+}
+
+#logButton{
+    background-color: rgba(207, 49, 202, 0.7);
+    border:3px ridge rgba(185, 107, 202, 0.6);
+    width: 30%;
+    height: 19%;
+    margin-left: calc(50% - 15%);
+    margin-top: 2%;
+    font-size: 1rem;
+}
+/* .blue:focus{
+    background-color: rgb(126, 166, 212);
+} */
+input:hover{
+    background-color:  rgba(122, 122, 230,0.6);
+}

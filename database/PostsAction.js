@@ -31,15 +31,15 @@ const postActions = {
   },
   postPosts: (reqBody, callback) => {
     if (
-      reqBody.hasOwnProperty("title") &&
-      reqBody.hasOwnProperty("userId") &&
-      reqBody.hasOwnProperty("body")
+      reqBody.title !== '' &&
+      reqBody.userId !== '' &&
+      reqBody.body !== ''
     ) {
       let sql = `INSERT INTO posts (title, userId, body) VALUES ('${reqBody.title}', ${reqBody.userId}, '${reqBody.body}')`;
       console.log(sql);
       con.query(sql, function (err, result) {
         if (err) throw err;
-        return callback(result);
+        return callback(JSON.stringify({ status: "success" }));
       });
     } else {
       console.log("helopjhgft");

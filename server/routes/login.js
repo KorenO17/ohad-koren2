@@ -5,7 +5,7 @@ const loginActions = require("../../database/login");
 
 
 router.post("/", function (req, res, next) {
-    loginActions.validateLogIn(req.body, (data) => res.json(data));
+    loginActions.validateLogIn(req.body, res) ;
   });
 
   module.exports = router;
