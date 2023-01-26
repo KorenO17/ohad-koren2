@@ -13,16 +13,18 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault()
         let bool = false
-        let strUser = await fetch(`http://localhost:8080/users?username=${username}`)
+        let strUser = await fetch(`http://localhost:8080/login`,{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: username, password: password })
+        })
         let theUser = await strUser.json()
-        // if (theUser[0].address.zipcode === password) {
-        //     bool = true
-            localStorage.setItem('user', JSON.stringify(theUser[0]))
-        // }
-        // if (bool) {
+        console.log(theUser);
+        if (theUser!='{}') {
+            localStorage.setItem('user', theUser)
             navigate('/UserPage')
-        // }
-        // else alert("One of the details is wrong")
+        }
+        else alert("One of the details is wrong")
     }
 
     const nameChange = (e) => {
