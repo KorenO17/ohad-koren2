@@ -8,7 +8,7 @@ const todoFuncs = {
             sql = `SELECT * FROM todos WHERE 1=1 AND `
             for (let key in req.query) {
                 if (!req.query[key].includes("'") && req.query[key].length > 0) {
-                    if (key === "title" || key === "userId"|| key === "id") {
+                    if (key === "title" || key === "userId" || key === "id") {
                         sql += `${key}='${req.query[key]}' AND `
                     }
                 }
@@ -36,10 +36,10 @@ const todoFuncs = {
                 userId = req.body[key]
             }
             else if (key === "completed") {
-                completed=req.body[key]
+                completed = req.body[key]
             }
         }
-        if (title && userId&&(completed===0||completed===1)) {
+        if (title && userId && (completed === 0 || completed === 1)) {
             sql = `INSERT INTO todos (completed, title, userId)
             VALUES (${completed},"${title}",${userId})`
         }
@@ -59,36 +59,27 @@ const todoFuncs = {
         if (id) {
             sql = `DELETE FROM todos WHERE id=${id};`
         }
+        console.log("id ", id);
         return sql
     },
     putFunc: (req) => {
         let sql
         let id
-        let title
-        let userId
         let completed
+
         for (let key in req.body) {
-            if (typeof req.body[key] == 'string' && !req.body[key].includes("'") && req.body[key].length > 0) {
-                if (key === "title") {
-                    title = req.body[key]
-                }
-            }
-            else if (key === "userId") {
-                userId = req.body[key]
-            }
-            else if (key === "completed") {
-                completed=req.body[key]
+            if (key === "completed") {
+                completed = req.body[key]
             }
             else if (key === "id") {
-                id=req.body[key]
+                id = req.body[key]
             }
         }
+        
         console.log(id);
-        console.log(userId);
-        console.log(title);
         console.log(completed);
-        if (title && userId&&(completed===0||completed===1)&&id){
-            sql=`UPDATE todos SET userId=${userId},completed=${completed},title='${title}' WHERE id=${id};`
+        if ((completed === 0 || completed === 1) && id) {
+            sql = `UPDATE todos SET completed=${completed} WHERE id=${id};`
         }
         return sql
     }

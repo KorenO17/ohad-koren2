@@ -32,7 +32,7 @@ con.connect(function (err) {
 
     con.query('SELECT * FROM todos', function (err, result) {
       if (err) throw err;
-      res.json(result);
+      res.json("added successfully");
     })
   })
 
@@ -46,8 +46,9 @@ router.delete('/', function (req, res) {
     })
   }
 
-  con.query('SELECT * FROM todos', function (err, result) {
+  con.query(`SELECT * FROM todos WHERE userId=${req.body.userId}`, function (err, result) {
     if (err) throw err;
+    console.log(req.body.id);
     res.json(result);
   })
 
@@ -64,7 +65,7 @@ router.put('/', function (req, res){
 
   con.query('SELECT * FROM todos', function (err, result) {
     if (err) throw err;
-    res.json(result);
+    res.json("changed");
   })
 })
 
